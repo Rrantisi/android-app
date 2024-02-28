@@ -13,6 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.myandroidproject.ui.theme.MyAndroidProjectTheme
 import net.skyscanner.backpack.compose.card.BpkCard
 import net.skyscanner.backpack.compose.card.BpkCardCorner
+import net.skyscanner.backpack.compose.theme.BpkTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,11 +33,13 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MyCard(){
-    BpkCard(corner = BpkCardCorner.Large) {
-        Text(text = "This is a BpkCard!!")
+fun MyCard() =
+    BpkTheme{
+        BpkCard(corner = BpkCardCorner.Large) {
+            Text(text = "This is a BpkCard!!")
+        }
     }
-}
+
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
