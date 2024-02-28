@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
 fun MyCard() =
     BpkTheme{
         BpkCard(corner = BpkCardCorner.Large) {
-            Text(text = "This is a BpkCard!!")
+            Text(text = "Departure", style = MaterialTheme.typography.headlineLarge)
         }
     }
 
