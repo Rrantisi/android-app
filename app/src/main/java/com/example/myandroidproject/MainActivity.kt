@@ -3,6 +3,7 @@ package com.example.myandroidproject
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -34,11 +35,26 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MyCard() =
-    BpkTheme{
-        BpkCard(corner = BpkCardCorner.Large) {
-            Text(text = "Departure", style = MaterialTheme.typography.headlineLarge)
+    Column {
+        Text(text = "Flight Number F900", style = MaterialTheme.typography.headlineMedium)
+        BpkTheme{
+            BpkCard(corner = BpkCardCorner.Large) {
+                Column {
+                    Text(text = "Departure Card", style = MaterialTheme.typography.headlineLarge)
+                    Text(text = "Airport JAX", style = MaterialTheme.typography.headlineMedium)
+                    Text(text = "Departure Time: 14:00", style = MaterialTheme.typography.headlineSmall)
+                }
+            }
+            BpkCard(corner = BpkCardCorner.Large) {
+                Column {
+                    Text(text = "Arrival Card", style = MaterialTheme.typography.headlineLarge)
+                    Text(text = "Airport MIA", style = MaterialTheme.typography.headlineMedium)
+                    Text(text = "Arrival Time: 16:00", style = MaterialTheme.typography.headlineSmall)
+                }
+            }
         }
     }
+
 
 
 @Composable
