@@ -5,6 +5,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -15,6 +17,7 @@ import com.example.myandroidproject.ui.theme.MyAndroidProjectTheme
 import net.skyscanner.backpack.compose.card.BpkCard
 import net.skyscanner.backpack.compose.card.BpkCardCorner
 import net.skyscanner.backpack.compose.theme.BpkTheme
+import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,14 +41,14 @@ fun MyCard() =
     Column {
         Text(text = "Flight Number F900", style = MaterialTheme.typography.headlineMedium)
         BpkTheme{
-            BpkCard(corner = BpkCardCorner.Large) {
+            BpkCard(corner = BpkCardCorner.Large, modifier = Modifier.width(350.dp).padding(15.dp)) {
                 Column {
                     Text(text = "Departure Card", style = MaterialTheme.typography.headlineLarge)
                     Text(text = "Airport JAX", style = MaterialTheme.typography.headlineMedium)
                     Text(text = "Departure Time: 14:00", style = MaterialTheme.typography.headlineSmall)
                 }
             }
-            BpkCard(corner = BpkCardCorner.Large) {
+            BpkCard(corner = BpkCardCorner.Large, modifier = Modifier.width(350.dp).padding(15.dp)) {
                 Column {
                     Text(text = "Arrival Card", style = MaterialTheme.typography.headlineLarge)
                     Text(text = "Airport MIA", style = MaterialTheme.typography.headlineMedium)
