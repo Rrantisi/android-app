@@ -11,7 +11,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.myandroidproject.ui.theme.MyAndroidProjectTheme
 import net.skyscanner.backpack.compose.card.BpkCard
@@ -38,21 +40,23 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MyCard() =
-    Column {
-        Text(text = "Flight Number F900", style = MaterialTheme.typography.headlineMedium)
+    Column (
+        horizontalAlignment = Alignment.CenterHorizontally
+    ){
+        Text(text = "Flight Number FL900", style = MaterialTheme.typography.headlineLarge, modifier = Modifier.padding(top = 40.dp, bottom = 20.dp), color = Color.Black)
         BpkTheme{
             BpkCard(corner = BpkCardCorner.Large, modifier = Modifier.width(350.dp).padding(15.dp)) {
                 Column {
-                    Text(text = "Departure Card", style = MaterialTheme.typography.headlineLarge)
-                    Text(text = "Airport JAX", style = MaterialTheme.typography.headlineMedium)
-                    Text(text = "Departure Time: 14:00", style = MaterialTheme.typography.headlineSmall)
+                    Text(text = "Departure Card", style = MaterialTheme.typography.headlineLarge, color = Color.DarkGray)
+                    Text(text = "JAX Airport", style = MaterialTheme.typography.headlineMedium, color = Color.Gray)
+                    Text(text = "Departure Time: 14:00 EST", style = MaterialTheme.typography.headlineSmall, color = Color.LightGray)
                 }
             }
             BpkCard(corner = BpkCardCorner.Large, modifier = Modifier.width(350.dp).padding(15.dp)) {
                 Column {
-                    Text(text = "Arrival Card", style = MaterialTheme.typography.headlineLarge)
-                    Text(text = "Airport MIA", style = MaterialTheme.typography.headlineMedium)
-                    Text(text = "Arrival Time: 16:00", style = MaterialTheme.typography.headlineSmall)
+                    Text(text = "Arrival Card", style = MaterialTheme.typography.headlineLarge, color = Color.DarkGray)
+                    Text(text = "MIA Airport", style = MaterialTheme.typography.headlineMedium, color = Color.Gray)
+                    Text(text = "Arrival Time: 16:00 EST", style = MaterialTheme.typography.headlineSmall, color = Color.LightGray)
                 }
             }
         }
